@@ -1,0 +1,29 @@
+body, html   //全局的stylus
+  line-height: 1
+  font-weight: 200
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif  //手机常用的字体，PingFang SC苹果手机用的，从前后往后找，找不到就用系统字体
+
+.clearfix  //清除所有浮动固定写法
+  display: inline-block
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+//如下是针对不同的dpi进行mixin.styl定义伪类区域缩放来实现边框像素的变化
+//最小dpi=1.5 webkit内核设备 ， 非webkit dpi=1.5设备,兼容性配置
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.7)  //webkit进行缩放 0.7 * dpi
+      transform: scaleY(0.7)
+
+//dpi=2设备
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)

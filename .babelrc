@@ -1,0 +1,5 @@
+{
+  "presets": ["es2015", "stage-2"],
+  "plugins": ["transform-runtime"],
+  "comments": false   //转换时取消代码注释
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>sell</title>
+  <!--1.浏览器网页是从上到下加载解析的，优先把该视口设置放在最前面-->
+  <!--2.手机视口设置,  手机浏览器 - 视口 - 网页 ，默认不设置viewport则默认是有的，大小为980px x 1200px
+   视口只有设备才有，用于承载设备中的网页，这个和浏览器不同，浏览器直接加载网页，设备则多个视口介质，它可以
+   控制网页的宽度，缩放等属性，一般保证视觉设计图与手机显示一样，需要设置视口如下属性和设备宽度一样，不缩放，
+   比例为1，其高度不关心
+  -->
+  <!--一般视口属性有5个参数，通过如下设置让视口与设备浏览器适配，从间接使网页与浏览器适配， width设置视口宽度，initial-scale设置视口默认缩放比，初始值为0.3,0-1缩小，大于1放大，此时放大与缩小会改变视口宽度尺寸，maximum-scale设置最大允许缩放比，minimum-scale设置最小允许缩放比，user-scalable设置是否允许用户缩放-->
+  <!--下面xxx-scale值与 DRP(物理像素/设备像素)有关系， 一般iphone4使用的retina(视网膜高清屏)一个设备像素的1px可以放多个物理像素,DRP为2则放2个像素 ，而普通屏则是1比1放置iphone3，若放大一般网页是矢量放大缩小不会失真，而图片是固定死的容易失真因为图片原本放在1个像素中现在要放在2个像素中，图片平均放大才能放下2个像素，造成失真-->
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <!--对一些html样式进行清除，全局设置-->
+  <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+</head>
+<body>
+<div id="app"></div>
+<!-- webpack自动编译时把js和css动态插入进来-->
+<!-- built files will be auto injected-->
+</body>
+</html>
